@@ -4,7 +4,7 @@ const app = express();
 const FILE_NAME = './db/computers.txt';
 
 
-appl.post('/computers', (req, res) => {
+app.post('/computers', (req, res) => {
     try{
         const data = readFile(FILE_NAME);
         console.log(req.body)

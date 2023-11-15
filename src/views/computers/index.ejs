@@ -1,0 +1,94 @@
+<%- include('../layouts/header',{title: 'Computer list'}); -%>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="alert alert-success text-center">computer list</h1>
+            </div>
+        </div>
+        <form class="row g-3 align-items-center my-3" action="/computers" method="get">
+            <div class="col-auto">
+              <label for="search" class="col-form-label">Search</label>
+            </div>
+            <div class="col-auto">
+              <input type="texto" id="search" name="search" class="form-control" value="<%=search%>">
+            </div>
+            <div class="col-auto">
+              <button type = "submit" class="btn btn-outline-secondary">Search</button>
+               
+             
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Ram</th>
+                            <th scope="col">Almacenamiento</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Sn</th>
+                            <th scope="col">Cpu</th>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Update</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% computers.map( computer => { %>
+                            <tr>
+                                <th scope="row"><%= computer.id %></th>
+                                <td><%= computer.Marca%></td>
+                                <td><%= computer.ram %></td>
+                                <td><%= computer.almacenamiento %></td>
+                                <td><%= computer.año %></td>
+                                <td><%= computer.sn %></td>
+                                <td><%= computer.cpu %></td>
+                                <td><%= computer.Model %></td>
+                                <td><%= computer.precio %></td>
+                                <td>
+                                
+                                
+
+
+
+                                  <form action="/computers/Delete/<%=computer.id%>"
+                                     method="post"
+                                    onsubmit= "return confirm('Está seguro de eliminar?');"
+                                    >
+                                
+
+                                  <button type="submit"  class="btn btn-danger">Delete</button>
+                                
+
+                                  
+                                  <td class="text-center">
+                                    <a href="/computers/update/<%= computer.id %>" class="btn btn-outline-danger">✏️</a>
+                                  </td>
+
+                            </div>
+                                
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-grid">
+                <a href="/computers/create" class="btn btn-outline-secondary">
+                    Crear un nuevo computador
+                </a>
+            </div>
+        </div>
+        <br>
+        
+
+    </div>
+
+    <%- include('../layouts/footer'); -%>
+   

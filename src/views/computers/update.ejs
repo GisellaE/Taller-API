@@ -1,0 +1,59 @@
+<%- include('../layouts/header', { title: 'Update Computer' }) %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="alert alert-success text-center">Update Computer</h1>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <form action="/computers/update/<%= computer.id %>" method="post" class="row">
+          <div class="col-6">
+            <label for="marca" class="form-label">Marca</label>
+            <input type="text" name="Marca" id="marca" class="form-control"  value="<%= computer.Marca %>">
+          </div>
+          <div class="col-6">
+            <label for="modelo" class="form-label">Modelo</label>
+            <input type="text" name="Model" id="modelo" class="form-control" value="<%= computer.Model %>">
+        </div>
+        <div class="col-6">
+            <label for="ram" class="form-label">Memoria RAM (GB)</label>
+            <input type="number" name="ram" id="ram" class="form-control" value="<%= computer.ram %>">
+        </div>
+        <div class="col-6">
+            <label for="almacenamiento" class="form-label">Almacenamiento (GB)</label>
+            <input type="text" name="almacenamiento" id="almacenamiento" class="form-control" value="<%= computer.almacenamiento %>">
+        </div>
+        <div class="col-6">
+            <label for="precio" class="form-label">Precio (USD)</label>
+            <input type="number" name="precio" id="precio" class="form-control" value="<%= computer.precio %>">
+        </div>
+        <div class="col-6">
+            <label for="año" class="form-label">Año</label>
+            <input type="number" name="año" id="año" class="form-control" value="<%= computer.año %>">
+        </div>
+        <div class="col-6">
+            <label for="sn" class="form-label">Sn</label>
+            <input type="text" name="sn" id="sn" class="form-control" value="<%= computer.sn %>">
+        </div>
+        <div class="col-6">
+            <label for="cpu" class="form-label">Cpu</label>
+            <input type="text" name="cpu" id="cpu" class="form-control" value="<%= computer.cpu %>">
+        </div>
+         
+          
+          <div class="col-12 d-grid mt-4">
+            <button type="submit" class="btn btn-outline-success">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-grid mt-4">
+        <a href="/computers" class="btn btn-outline-secondary">Back to Computer List</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../layouts/footer') %>
