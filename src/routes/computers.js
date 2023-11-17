@@ -1,4 +1,4 @@
-const { validatorHandler } = require("../middlewares/validator.handler"); 
+onst { validatorHandler } = require("../middlewares/validator.handler"); 
 const {
   getComputerSchema,
   createComputerSchema,
@@ -10,13 +10,11 @@ const {v4: uuidv4} = require('uuid');
 ;
 
 const { readFile, writeFile } = require('../files');
-const {models} = require('../libs/sequelize');
-
+const {models} = require('../libs/sequelize');  
 
  const FILE_NAME = './db/computers.txt';
 //WEB
 //Rutas
-
 
 // Listar Mascotas
 router.get('/', async (req, res) =>{
